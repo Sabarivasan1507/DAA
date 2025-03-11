@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class SetBitCount {
+    public static int countSetBits(int num) {
+        int count = 0;
+        while (num > 0) {
+            num = num & (num - 1);
+            count++;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        System.out.println(countSetBits(number));
+        scanner.close();
+    }
+}
